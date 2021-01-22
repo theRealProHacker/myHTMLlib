@@ -7,10 +7,9 @@ https://getbootstrap.com/docs/4.3/getting-started/introduction/
 The official GitHub page:  
 https://github.com/twbs/bootstrap  
 
-The next one is [jQuery](https://github.com/theRealProHacker/myHTMLlib/tree/main/jquery), these both are maybe the most common frameworks in this repository.
-VanillaScript and jQuery are the best combination for client side programming.  
-[jQuery Documentation](https://api.jquery.com/)  
-[jQuery Official GitHub](https://github.com/jquery/jquery)  
+The next one is [jQuery](https://github.com/theRealProHacker/myHTMLlib/tree/main/jquery). VanillaScript and jQuery are mmaybe the best combination for client side programming.  
+[Documentation](https://api.jquery.com/)  
+[Official GitHub](https://github.com/jquery/jquery)  
 
 More unknown is the [bootstrap-slider lib](https://github.com/theRealProHacker/myHTMLlib/tree/main/bootstrap-slider) by @seiyria.  
 Find it on Github [here](https://github.com/seiyria/bootstrap-slider)  
