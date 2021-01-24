@@ -41,3 +41,24 @@ const path_2wk2r = document.createElementNS("http://www.w3.org/2000/svg", "path"
 path_2wk2r.setAttribute("d", "M " + sX + " " + sY + " A " + [ rx , ry , φ / (2*π) *360, fA, fS, eX, eY ].join(" "));
 return path_2wk2r;
 });
+
+const f_svg_ellipse_arc_as_String = (([cx,cy],[rx,ry], [t1, Δ], φ ) => { //this is much better because it doesnt rely on w3.org's website and also it can be inserted into code as String
+    /* [
+    returns a SVG path element that represent a ellipse.
+    cx,cy → center of ellipse
+    rx,ry → major minor radius
+    t1 → start angle, in radian.
+    Δ → angle to sweep, in radian. positive.
+    φ → rotation on the whole, in radian
+    URL: SVG Circle Arc http://xahlee.info/js/svg_circle_arc.html
+    Version 2019-06-19
+     ] */
+    Δ = Δ % (2*π);
+    const rotMatrix = f_rotate_matrix (φ);
+    const [sX, sY] = ( f_vec_add ( f_matrix_times ( rotMatrix, [rx * cos(t1), ry * sin(t1)] ), [cx,cy] ) );
+    const [eX, eY] = ( f_vec_add ( f_matrix_times ( rotMatrix, [rx * cos(t1+Δ), ry * sin(t1+Δ)] ), [cx,cy] ) );
+    const fA = ( (  Δ > π ) ? 1 : 0 );
+    const fS = ( (  Δ > 0 ) ? 1 : 0 );
+    const path_2wk2r =["d='" , "M" , sX , sY , "A" , rx , ry , φ / (2*π) *360, fA, fS, eX, eY,"'" ].join(" ");
+    return path_2wk2r;
+});
